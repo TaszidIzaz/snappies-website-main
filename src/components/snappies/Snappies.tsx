@@ -88,7 +88,7 @@ const Snappies: React.FC = () => {
               tag="New"
               className="w-full md:w-[420px] min-h-[316px] flex flex-col justify-between"
             />
-            <div className="w-316px overflow-x-auto">
+            <div className="w-full overflow-x-auto">
               <ProductGrid
                 horizontal={true}
                 scrollable={true}
