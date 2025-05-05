@@ -195,7 +195,7 @@ const Snappies: React.FC = () => {
             "Schweppes Ginger Ale",
             "Biscoff Biscuits",
           ]}
-          backgroundColor="bg-[rgba(255,254,250,1)]"
+          backgroundColor="bg-[#FEF7DC]"
           className="mt-[60px]"
         />
 
@@ -216,7 +216,7 @@ const Snappies: React.FC = () => {
             "Tong Dokan (Tobacco & Others)",
             "Other categories",
           ]}
-          backgroundColor="bg-[rgba(247,253,250,1)]"
+          backgroundColor="bg-[#E7F9F0]"
           className="mt-[60px]"
         />
       </div>

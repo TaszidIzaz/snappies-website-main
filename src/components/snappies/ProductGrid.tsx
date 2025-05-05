@@ -167,7 +167,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
     // {
     //   id: "20",
     //   name: "Schweppes Tonic Water Can 330ml",
-    //   image: "/uploads/d8d01822-638a-43c5-a84c-53e689b117a8.png",
+    //   image: "/uploads/4d360787-2c37-469c-be21-84e4b91a05ef.png",
     //   currentPrice: "৳150",
     //   originalPrice: "৳180",
     // },

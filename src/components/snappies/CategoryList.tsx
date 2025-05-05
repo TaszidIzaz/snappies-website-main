@@ -79,14 +79,14 @@ const CategoryList: React.FC = () => {
 
   return (
     <div className="flex w-full justify-center">
-      <div className="flex w-full max-w-[1520px] overflow-x-auto hide-scrollbar snap-x snap-mandatory pb-4">
-        <div className="flex items-center gap-4 flex-nowrap mx-auto">
+      <div className="w-full max-w-[1520px]">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10 gap-4 mx-auto">
           {categories.map((category) => (
             <a
               key={category.id}
               href="#"
               onClick={(e) => handleCategoryClick(e, category.id)}
-              className="bg-white border flex-shrink-0 snap-start overflow-hidden text-[15px] text-black font-medium text-center leading-[1.3] w-[100px] md:w-[106px] rounded-[5px] border-[rgba(247,247,247,1)] border-solid hover:shadow-md transition-shadow"
+              className="bg-white border flex-shrink-0 overflow-hidden text-[15px] text-black font-medium text-center leading-[1.3] w-full rounded-[5px] border-[rgba(247,247,247,1)] border-solid hover:shadow-md transition-shadow"
             >
               <img
                 src={category.image}
@@ -109,7 +109,7 @@ const CategoryList: React.FC = () => {
           <a
             href="#"
             onClick={(e) => { e.preventDefault(); navigate("/maintenance"); }}
-            className="bg-white border flex-shrink-0 snap-start overflow-hidden w-[100px] h-[152px] md:w-[152px] rounded-[5px] border-[rgba(247,247,247,1)] border-solid hover:shadow-md transition-shadow"
+            className="bg-white border flex-shrink-0 overflow-hidden w-full h-[152px] rounded-[5px] border-[rgba(247,247,247,1)] border-solid hover:shadow-md transition-shadow"
           >
             <div className="bg-[rgba(247,247,247,1)] flex flex-col overflow-hidden items-stretch justify-center px-[11px] py-[13px] rounded-t-[5px]">
               <img

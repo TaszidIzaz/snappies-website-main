@@ -64,16 +64,16 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
       {/* Product Details */}
       <div className="flex flex-col justify-between p-2 flex-grow">
-        <h3 className="text-xs text-black font-medium tracking-[-0.4px] leading-[18px] line-clamp-2 h-[36px]">
+        <h3 className="text-md text-black font-medium tracking-[-0.4px] leading-[20px] line-clamp-2 h-[42px]">
           {name}
         </h3>
 
         <div className="flex w-full items-center justify-between mt-1">
           <div className="flex items-center gap-1">
-            <div className="text-black text-sm font-semibold leading-none tracking-[0.3px]">
+            <div className="text-black text-md font-semibold leading-none tracking-[0px]">
               {currentPrice}
             </div>
-            <div className="text-[#2b1e35] text-[10px] font-normal leading-none line-through">
+            <div className="text-[#2b1e35] text-[10px] font-normal tracking-[-0.5px] leading-none line-through">
               {originalPrice}
             </div>
           </div>
