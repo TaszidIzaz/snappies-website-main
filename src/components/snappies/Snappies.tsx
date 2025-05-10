@@ -63,21 +63,63 @@ const Snappies: React.FC = () => {
               className="w-full"
               isHotDeals={true}
             >
-              <div className="mt-8">
-                <ProductGrid
-                  horizontal={true}
-                  scrollable={true}
-                  backgroundColor="bg-[rgba(247,253,250,1)]"
-                  buttonColor="bg-[rgba(58,183,131,1)]"
-                />
+            <div className="mt-8 relative" id="fast-container">
+              {/* Left Arrow */}
+              <button 
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md -ml-2 focus:outline-none hidden md:block" 
+                onClick={() => {
+                  // Direct reference to the scrollable element inside this container
+                  const container = document.querySelector('#fast-container > div > div');
+                  if (container) {
+                    container.scrollBy({ left: -300, behavior: 'smooth' });
+                  }
+                }}
+                aria-label="Scroll left"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              
+              {/* Mobile scroll indicator */}
+              <div className="absolute right-4 top-[-30px] flex items-center gap-2 md:hidden">
+                <span className="text-sm text-gray-600">Swipe</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+
+                  <ProductGrid
+                    horizontal={true}
+                    scrollable={true}
+                    backgroundColor="bg-[rgba(255,250,250,1)]"
+                    buttonColor="bg-[rgba(58,183,131,1)]"
+                  />
+                
+                {/* Right Arrow */}
+                <button 
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md -mr-2 focus:outline-none hidden md:block" 
+                  onClick={() => {
+                    // Direct reference to the scrollable element inside this container
+                    const container = document.querySelector('#fast-container > div > div');
+                    if (container) {
+                      container.scrollBy({ left: 300, behavior: 'smooth' });
+                    }
+                  }}
+                  aria-label="Scroll right"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </button>
               </div>
             </PromoBanner>
           </div>
         </div>
 
         {/* New Products Banner */}
-        <div className="mt-[60px]">
-          <div className="flex w-full flex-col md:flex-row items-center gap-10">
+        <div className="self-center flex w-full max-w-[1520px] flex-col items-stretch px-[10px]">
+          <div className="flex w-full flex-col mt-[60px]">
             <PromoBanner
               backgroundColor="bg-[#9b87f5]"
               title="New Products"
@@ -86,22 +128,68 @@ const Snappies: React.FC = () => {
               buttonColor="bg-white"
               buttonTextColor="text-[#9b87f5]"
               tag="New"
-              className="w-full md:w-[420px] min-h-[316px] flex flex-col justify-between"
-            />
-            <div className="w-full overflow-x-auto">
-              <ProductGrid
-                horizontal={true}
-                scrollable={true}
-                backgroundColor="bg-[rgba(247,253,250,1)]"
-                buttonColor="bg-[#9b87f5]"
-              />
-            </div>
+              className="w-full"
+              isHotDeals={true}
+            >
+            <div className="mt-8 relative" id="newprod-container">
+              {/* Left Arrow */}
+              <button 
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md -ml-2 focus:outline-none hidden md:block" 
+                onClick={() => {
+                  // Direct reference to the scrollable element inside this container
+                  const container = document.querySelector('#newprod-container > div > div');
+                  if (container) {
+                    container.scrollBy({ left: -300, behavior: 'smooth' });
+                  }
+                }}
+                aria-label="Scroll left"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              
+              {/* Mobile scroll indicator */}
+              <div className="absolute right-4 top-[-30px] flex items-center gap-2 md:hidden">
+                <span className="text-sm text-gray-600">Swipe</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+                
+                
+                  <ProductGrid
+                    horizontal={true}
+                    scrollable={true}
+                    backgroundColor="bg-[rgba(255,250,250,1)]"
+                    buttonColor="bg-[#9b87f5]"
+                  />
+                
+                
+                {/* Right Arrow */}
+                <button 
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md -mr-2 focus:outline-none hidden md:block" 
+                  onClick={() => {
+                    // Direct reference to the scrollable element inside this container
+                    const container = document.querySelector('#newprod-container > div > div');
+                    if (container) {
+                      container.scrollBy({ left: 300, behavior: 'smooth' });
+                    }
+                  }}
+                  aria-label="Scroll right"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </button>
+              </div>
+            </PromoBanner>
           </div>
         </div>
 
         {/* Chocolates Banner */}
-        <div className="mt-[60px]">
-          <div className="flex w-full flex-col md:flex-row items-center gap-10">
+        <div className="self-center flex w-full max-w-[1520px] flex-col items-stretch px-[10px]">
+          <div className="flex w-full flex-col mt-[60px]">
             <PromoBanner
               backgroundColor="bg-[rgba(184,118,86,1)]"
               title="Don't Miss this Deal"
@@ -114,22 +202,68 @@ const Snappies: React.FC = () => {
               buttonColor="bg-white"
               buttonTextColor="text-[rgba(184,118,86,1)]"
               tag="Chocolates"
-              className="w-full md:w-[420px] min-h-[316px] flex flex-col justify-between"
-            />
-            <div className="w-full overflow-x-auto">
-              <ProductGrid
-                horizontal={true}
-                scrollable={true}
-                backgroundColor="bg-[rgba(252,249,248,1)]"
-                buttonColor="bg-[rgba(184,118,86,1)]"
-              />
-            </div>
+              className="w-full"
+              isHotDeals={true}
+            >
+            <div className="mt-8 relative" id="choco-container">
+              {/* Left Arrow */}
+              <button 
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md -ml-2 focus:outline-none hidden md:block" 
+                onClick={() => {
+                  // Direct reference to the scrollable element inside this container
+                  const container = document.querySelector('#choco-container > div > div');
+                  if (container) {
+                    container.scrollBy({ left: -300, behavior: 'smooth' });
+                  }
+                }}
+                aria-label="Scroll left"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              
+              {/* Mobile scroll indicator */}
+              <div className="absolute right-4 top-[-30px] flex items-center gap-2 md:hidden">
+                <span className="text-sm text-gray-600">Swipe</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+                
+                
+                  <ProductGrid
+                    horizontal={true}
+                    scrollable={true}
+                    backgroundColor="bg-[rgba(255,250,250,1)]"
+                    buttonColor="bg-[rgba(184,118,86,1)]"
+                  />
+                
+                
+                {/* Right Arrow */}
+                <button 
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md -mr-2 focus:outline-none hidden md:block" 
+                  onClick={() => {
+                    // Direct reference to the scrollable element inside this container
+                    const container = document.querySelector('#choco-container > div > div');
+                    if (container) {
+                      container.scrollBy({ left: 300, behavior: 'smooth' });
+                    }
+                  }}
+                  aria-label="Scroll right"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </button>
+              </div>
+            </PromoBanner>
           </div>
         </div>
 
         {/* Snacks Banner */}
-        <div className="mt-[60px]">
-          <div className="flex w-full flex-col md:flex-row items-center gap-10">
+        <div className="self-center flex w-full max-w-[1520px] flex-col items-stretch px-[10px]">
+          <div className="flex w-full flex-col mt-[60px]">
             <PromoBanner
               backgroundColor="bg-[rgba(239,81,78,1)]"
               title="Get all Your Snacks"
@@ -142,22 +276,66 @@ const Snappies: React.FC = () => {
               buttonColor="bg-white"
               buttonTextColor="text-[rgba(239,81,78,1)]"
               tag="Snacks"
-              className="w-full md:w-[420px] min-h-[316px] flex flex-col justify-between"
-            />
-            <div className="w-full overflow-x-auto">
-              <ProductGrid
-                horizontal={true}
-                scrollable={true}
-                backgroundColor="bg-[rgba(255,250,250,1)]"
-                buttonColor="bg-[rgba(239,81,78,1)]"
-              />
-            </div>
+              className="w-full"
+              isHotDeals={true}
+            >
+             <div className="mt-8 relative" id="snacks-container">
+              {/* Left Arrow */}
+              <button 
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md -ml-2 focus:outline-none hidden md:block" 
+                onClick={() => {
+                  // Direct reference to the scrollable element inside this container
+                  const container = document.querySelector('#snacks-container > div > div');
+                  if (container) {
+                    container.scrollBy({ left: -300, behavior: 'smooth' });
+                  }
+                }}
+                aria-label="Scroll left"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              
+              {/* Mobile scroll indicator */}
+              <div className="absolute right-4 top-[-30px] flex items-center gap-2 md:hidden">
+                <span className="text-sm text-gray-600">Swipe</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+                
+                  <ProductGrid
+                    horizontal={true}
+                    scrollable={true}
+                    backgroundColor="bg-[rgba(255,250,250,1)]"
+                    buttonColor="bg-[rgba(239,81,78,1)]"
+                  />
+                
+                {/* Right Arrow */}
+                <button 
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md -mr-2 focus:outline-none hidden md:block" 
+                  onClick={() => {
+                    // Direct reference to the scrollable element inside this container
+                    const container = document.querySelector('#snacks-container > div > div');
+                    if (container) {
+                      container.scrollBy({ left: 300, behavior: 'smooth' });
+                    }
+                  }}
+                  aria-label="Scroll right"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </button>
+              </div>
+            </PromoBanner>
           </div>
         </div>
 
         {/* Beverages Banner */}
-        <div className="mt-[60px]">
-          <div className="flex w-full flex-col md:flex-row items-center gap-10">
+        <div className="self-center flex w-full max-w-[1520px] flex-col items-stretch px-[10px]">
+          <div className="flex w-full flex-col mt-[60px]">
             <PromoBanner
               backgroundColor="bg-[rgba(33,150,243,1)]"
               title="Get Your Beverages"
@@ -166,16 +344,60 @@ const Snappies: React.FC = () => {
               buttonColor="bg-white"
               buttonTextColor="text-[rgba(33,150,243,1)]"
               tag="Beverages"
-              className="w-full md:w-[420px] min-h-[316px] flex flex-col justify-between"
-            />
-            <div className="w-full overflow-x-auto">
-              <ProductGrid
-                horizontal={true}
-                scrollable={true}
-                backgroundColor="bg-[rgba(232,244,253,1)]"
-                buttonColor="bg-[rgba(33,150,243,1)]"
-              />
-            </div>
+              className="w-full"
+              isHotDeals={true}
+            >
+              <div className="mt-8 relative" id="beverages-container">
+              {/* Left Arrow */}
+              <button 
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md -ml-2 focus:outline-none hidden md:block" 
+                onClick={() => {
+                  // Direct reference to the scrollable element inside this container
+                  const container = document.querySelector('#beverages-container > div > div');
+                  if (container) {
+                    container.scrollBy({ left: -300, behavior: 'smooth' });
+                  }
+                }}
+                aria-label="Scroll left"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              
+              {/* Mobile scroll indicator */}
+              <div className="absolute right-4 top-[-30px] flex items-center gap-2 md:hidden">
+                <span className="text-sm text-gray-600">Swipe</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+                
+                  <ProductGrid
+                    horizontal={true}
+                    scrollable={true}
+                    backgroundColor="bg-[rgba(232,244,253,1)]"
+                    buttonColor="bg-[rgba(33,150,243,1)]"
+                  />
+                
+                {/* Right Arrow */}
+                <button 
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md -mr-2 focus:outline-none hidden md:block" 
+                  onClick={() => {
+                    // Direct reference to the scrollable element inside this container
+                    const container = document.querySelector('#beverages-container > div > div');
+                    if (container) {
+                      container.scrollBy({ left: 300, behavior: 'smooth' });
+                    }
+                  }}
+                  aria-label="Scroll right"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </button>
+              </div>
+            </PromoBanner>
           </div>
         </div>
 
