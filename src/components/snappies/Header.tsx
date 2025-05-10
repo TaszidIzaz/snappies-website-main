@@ -84,12 +84,12 @@ const Header: React.FC = () => {
         <div className="flex items-center gap-4">
           <button 
             onClick={toggleSuperSaver}
-            className={`relative border flex items-center justify-between text-base font-normal rounded-full px-2 py-1 w-[148px] h-[60px] border-[rgba(255,255,255,0.3)] transition-colors ${isSuperSaverOn ? 'bg-[rgba(19,171,120,1)] text-white' : 'bg-[rgba(232,232,232,1)]'}`}
+            className={`relative border flex items-center justify-between text-base font-normal rounded-full px-2 py-1 w-[150px] h-[60px] border-[rgba(255,255,255,0.3)] transition-colors ${isSuperSaverOn ? 'bg-[rgba(19,171,120,1)] text-white' : 'bg-[rgba(232,232,232,1)]'}`}
           >
             <div 
-              className={`absolute flex h-[46px] w-[46px] rounded-full transition-all duration-300 ${isSuperSaverOn ? 'transform translate-x-[75px] bg-[rgba(252,219,87,1)]' : 'bg-white'}`}
+              className={`absolute flex h-[46px] w-[46px] rounded-full transition-all duration-300 ${isSuperSaverOn ? 'transform translate-x-[84px] bg-[rgba(252,219,87,1)]' : 'bg-white'}`}
             ></div>
-            <div className={`w-[71px] text-center transition-all duration-300 ${isSuperSaverOn ? 'transform translate-x-2' : 'transform translate-x-10'}`}>
+            <div className={`w-[82px] text-center transition-all duration-300 ${isSuperSaverOn ? 'transform translate-x-2' : 'transform translate-x-10'}`}>
               Steal Deal
             </div>
           </button>
