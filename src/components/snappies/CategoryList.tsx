@@ -80,7 +80,7 @@ const CategoryList: React.FC = () => {
   return (
     <div className="flex w-full justify-center">
       <div className="w-full max-w-[1520px]">
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10 gap-4 mx-auto">
+        <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10 gap-4 mx-auto">
           {categories.map((category) => (
             <a
               key={category.id}

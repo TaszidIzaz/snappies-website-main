@@ -221,21 +221,21 @@ const ProductGrid: React.FC<ProductGridProps> = ({
     } 
     else if (title === "Beverages" || buttonColor === "bg-[rgba(33,150,243,1)]") {
       // Include new beverage products
-      return [6, 14, 21, 22, 23, 24, 25].map(id => 
+      return [6, 14, 21, 22, 23, 24, 25, 18].map(id => 
         products.find(p => p.id === id.toString())).filter(Boolean);
     }
     else if (title === "Snacks" || buttonColor === "bg-[rgba(239,81,78,1)]") {
-      return [4, 9, 10, 11, 17, 18, 19].map(id => 
+      return [4, 9, 10, 11, 17, 18, 19, 25].map(id => 
         products.find(p => p.id === id.toString())).filter(Boolean);
     }
     else if (buttonColor === "bg-[rgba(58,183,131,1)]") {
       // Mix of popular products including some new beverages
-      return [1, 13, 17, 22, 23, 10, 9].map(id => 
+      return [1, 13, 17, 22, 23, 10, 9, 17].map(id => 
         products.find(p => p.id === id.toString())).filter(Boolean);
     }
     else if (buttonColor === "#9b87f5") {
       // New products section with focus on new beverages
-      return [ 21, 23, 24, 25, 8, 12].map(id => 
+      return [ 21, 23, 24, 25, 8, 12, 19].map(id => 
         products.find(p => p.id === id.toString())).filter(Boolean);
     }
     
@@ -268,22 +268,22 @@ const ProductGrid: React.FC<ProductGridProps> = ({
         </div>
       )}
 
-      <div
-        className={`${
-          scrollable || horizontal || window.innerWidth < 768
-            ? "flex overflow-x-auto snap-x snap-mandatory pb-4 hide-scrollbar"
-            : "flex flex-wrap justify-center gap-5"
-        } w-full items-stretch ${title ? "mt-7" : ""}`}
-      >
-        {sectionProducts.map((product) => (
-          <div 
-            key={product.id} 
-            className={`${
-              scrollable || horizontal || window.innerWidth < 768 
-                ? "snap-start flex-shrink-0 mr-5 last:mr-0" 
-                : ""
-            } w-full h-full sm:w-[calc(50%-10px)] md:w-[calc(33.333%-13.333px)] lg:w-[calc(14.285%-12px)]`}
-          >
+    <div
+      className={`${
+        scrollable || horizontal
+          ? "flex overflow-x-auto snap-x snap-mandatory pb-4 scroll-smooth hide-scrollbar"
+          : "flex flex-wrap justify-center gap-3"
+      } w-full items-stretch ${title ? "mt-7" : ""}`}
+    >
+      {sectionProducts.map((product) => (
+        <div 
+          key={product.id} 
+          className={`${
+            scrollable || horizontal
+              ? "snap-start flex-shrink-0 mr-4 last:mr-0 w-[45%] sm:w-[220px]" 
+              : "w-[calc(50%-6px)] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-13.333px)] lg:w-[calc(14.285%-12px)]"
+          } h-full`}
+        >
             <ProductCard
               id={product.id}
               name={product.name}
