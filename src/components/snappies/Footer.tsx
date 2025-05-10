@@ -44,7 +44,7 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
               className="aspect-[3.39] object-contain w-[220px] max-w-full"
             />
 
-            <h3 className="text-[rgba(252,219,87,1)] text-lg font-bold leading-none tracking-[-0.64px] mt-[43px] max-md:mt-10">
+            <h3 className="text-[rgba(252,219,87,1)] text-xl font-bold leading-none tracking-[-0.64px] mt-[43px] max-md:mt-10">
               Follow us
             </h3>
 
@@ -117,19 +117,19 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
 
           {/* Company Links */}
           <div className="flex min-w-60 flex-col items-stretch text-sm text-white font-normal tracking-[-0.56px] leading-loose flex-1 shrink basis-[76px] max-w-[1440px] pt-[5px] pb-[18px] mt-8">
-            <h3 className="text-[rgba(252,219,87,1)] text-lg font-bold leading-none tracking-[-0.64px]">
+            <h3 className="text-[rgba(252,219,87,1)] text-xl font-bold leading-none tracking-[-0.64px]">
               Company
             </h3>
 
             <nav aria-label="Company links"
-            className="min-h-[115px] text-sm text-white font-normal tracking-[-0.56px] leading-loose mt-[23px]"
+            className="min-h-[115px] text-sm text-white font-normal tracking-[-0.56px] leading-loose mt-[10px]"
             >
               <ul>
                 {companyLinks.map((link, index) => (
                   <li
-                    key={index}
-                    className={`${index === 0 ? "h-[22px]" : ""} w-full ${index > 0 ? "mt-1" : ""}`}
-                  >
+                      key={index}
+                      className="w-full mt-1"
+                    >
                     <button 
                       onClick={() => handleNavigation(link)}
                       className="hover:underline text-white text-left bg-transparent border-none p-0 cursor-pointer"
@@ -144,20 +144,20 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
 
           {/* Explore Links */}
           <div className="flex min-w-60 flex-col items-stretch flex-1 shrink basis-14 max-w-[1440px] pr-5 py-[3px] mt-8">
-            <h3 className="text-[rgba(252,219,87,1)] text-lg font-bold leading-none tracking-[-0.64px]">
+            <h3 className="text-[rgba(252,219,87,1)] text-xl font-bold leading-none tracking-[-0.64px]">
               Explore
             </h3>
 
             <nav
               aria-label="Explore links"
-              className="min-h-[115px] text-sm text-white font-normal tracking-[-0.56px] leading-loose mt-[23px]"
+              className="min-h-[115px] text-sm text-white font-normal tracking-[-0.56px] leading-loose mt-[10px]"
             >
               <ul>
                 {exploreLinks.map((link, index) => (
-                  <li
-                    key={index}
-                    className={`${index === 0 ? "h-[22px]" : ""} w-full ${index > 0 ? "mt-1" : ""}`}
-                  >
+                    <li
+                      key={index}
+                      className="w-full mt-1"
+                    >
                     <button 
                       onClick={() => navigate("/maintenance")}
                       className="hover:underline text-white text-left bg-transparent border-none p-0 cursor-pointer"
@@ -172,20 +172,20 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
 
           {/* Useful Links */}
           <div className="flex min-w-60 flex-col items-stretch flex-1 shrink basis-14 max-w-[1440px] pr-5 py-[3px] mt-8">
-            <h3 className="text-[rgba(252,219,87,1)] text-lg font-bold leading-none tracking-[-0.64px]">
+            <h3 className="text-[rgba(252,219,87,1)] text-xl font-bold leading-none tracking-[-0.64px]">
               Useful links
             </h3>
 
             <nav
               aria-label="Useful links"
-              className="min-h-[115px] text-sm text-white font-normal tracking-[-0.56px] leading-loose mt-[26px]"
+              className="min-h-[115px] text-sm text-white font-normal tracking-[-0.56px] leading-loose mt-[10px]"
             >
               <ul>
                 {usefulLinks.map((link, index) => (
-                  <li
-                    key={index}
-                    className={`${index === 0 ? "h-[22px] whitespace-nowrap" : ""} w-full ${index > 0 ? "mt-1" : ""}`}
-                  >
+                    <li
+                      key={index}
+                      className="w-full mt-1"
+                    >
                     <button 
                       onClick={() => navigate("/maintenance")}
                       className="hover:underline text-white text-left bg-transparent border-none p-0 cursor-pointer"
