@@ -44,7 +44,7 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
               className="aspect-[3.39] object-contain w-[220px] max-w-full"
             />
 
-            <h3 className="text-[rgba(252,219,87,1)] text-base font-bold leading-none tracking-[-0.64px] mt-[43px] max-md:mt-10">
+            <h3 className="text-[rgba(252,219,87,1)] text-lg font-bold leading-none tracking-[-0.64px] mt-[43px] max-md:mt-10">
               Follow us
             </h3>
 
@@ -116,19 +116,19 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
           </div>
 
           {/* Company Links */}
-          <div className="flex min-w-60 flex-col items-stretch text-sm text-white font-normal tracking-[-0.56px] leading-loose flex-1 shrink basis-[76px] max-w-[1440px] pt-[5px] pb-[18px]">
-            <h3 className="text-[rgba(252,219,87,1)] text-base font-bold leading-none tracking-[-0.64px]">
+          <div className="flex min-w-60 flex-col items-stretch text-sm text-white font-normal tracking-[-0.56px] leading-loose flex-1 shrink basis-[76px] max-w-[1440px] pt-[5px] pb-[18px] mt-8">
+            <h3 className="text-[rgba(252,219,87,1)] text-lg font-bold leading-none tracking-[-0.64px]">
               Company
             </h3>
 
-            <nav aria-label="Company links">
+            <nav aria-label="Company links"
+            className="min-h-[115px] text-sm text-white font-normal tracking-[-0.56px] leading-loose mt-[23px]"
+            >
               <ul>
                 {companyLinks.map((link, index) => (
                   <li
                     key={index}
-                    className={
-                      index === 0 ? "whitespace-nowrap mt-[23px]" : "mt-2"
-                    }
+                    className={`${index === 0 ? "h-[22px]" : ""} w-full ${index > 0 ? "mt-1" : ""}`}
                   >
                     <button 
                       onClick={() => handleNavigation(link)}
@@ -143,8 +143,8 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
           </div>
 
           {/* Explore Links */}
-          <div className="flex min-w-60 flex-col items-stretch flex-1 shrink basis-14 max-w-[1440px] pr-5 py-[3px]">
-            <h3 className="text-[rgba(252,219,87,1)] text-base font-bold leading-none tracking-[-0.64px]">
+          <div className="flex min-w-60 flex-col items-stretch flex-1 shrink basis-14 max-w-[1440px] pr-5 py-[3px] mt-8">
+            <h3 className="text-[rgba(252,219,87,1)] text-lg font-bold leading-none tracking-[-0.64px]">
               Explore
             </h3>
 
@@ -156,7 +156,7 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                 {exploreLinks.map((link, index) => (
                   <li
                     key={index}
-                    className={`${index === 0 ? "h-[22px]" : ""} w-full ${index > 0 ? "mt-2" : ""}`}
+                    className={`${index === 0 ? "h-[22px]" : ""} w-full ${index > 0 ? "mt-1" : ""}`}
                   >
                     <button 
                       onClick={() => navigate("/maintenance")}
@@ -171,8 +171,8 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
           </div>
 
           {/* Useful Links */}
-          <div className="flex min-w-60 flex-col items-stretch flex-1 shrink basis-14 max-w-[1440px] pr-5 py-[3px]">
-            <h3 className="text-[rgba(252,219,87,1)] text-base font-bold leading-none tracking-[-0.64px]">
+          <div className="flex min-w-60 flex-col items-stretch flex-1 shrink basis-14 max-w-[1440px] pr-5 py-[3px] mt-8">
+            <h3 className="text-[rgba(252,219,87,1)] text-lg font-bold leading-none tracking-[-0.64px]">
               Useful links
             </h3>
 
@@ -184,7 +184,7 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                 {usefulLinks.map((link, index) => (
                   <li
                     key={index}
-                    className={`${index === 0 ? "h-[22px] whitespace-nowrap" : ""} w-full ${index > 0 ? "mt-2" : ""}`}
+                    className={`${index === 0 ? "h-[22px] whitespace-nowrap" : ""} w-full ${index > 0 ? "mt-1" : ""}`}
                   >
                     <button 
                       onClick={() => navigate("/maintenance")}

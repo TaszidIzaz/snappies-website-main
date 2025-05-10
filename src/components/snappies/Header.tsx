@@ -84,7 +84,7 @@ const Header: React.FC = () => {
         <div className="flex items-center gap-4">
           <button 
             onClick={toggleSuperSaver}
-            className={`relative border flex items-center justify-between text-base font-black rounded-full px-2 py-1 w-[148px] h-[60px] border-[rgba(255,255,255,0.3)] transition-colors ${isSuperSaverOn ? 'bg-[rgba(19,171,120,1)] text-white' : 'bg-[rgba(232,232,232,1)]'}`}
+            className={`relative border flex items-center justify-between text-base font-normal rounded-full px-2 py-1 w-[148px] h-[60px] border-[rgba(255,255,255,0.3)] transition-colors ${isSuperSaverOn ? 'bg-[rgba(19,171,120,1)] text-white' : 'bg-[rgba(232,232,232,1)]'}`}
           >
             <div 
               className={`absolute flex h-[46px] w-[46px] rounded-full transition-all duration-300 ${isSuperSaverOn ? 'transform translate-x-[75px] bg-[rgba(252,219,87,1)]' : 'bg-white'}`}
@@ -165,12 +165,12 @@ const Header: React.FC = () => {
             {/* Super Saver Toggle */}
             <button 
               onClick={toggleSuperSaver}
-              className={`relative border flex items-center justify-between text-sm font-black rounded-full px-1 py-1 w-[110px] h-[50px] border-[rgba(255,255,255,0.3)] transition-colors ${isSuperSaverOn ? 'bg-[rgba(19,171,120,1)] text-white' : 'bg-[rgba(232,232,232,1)]'}`}
+              className={`relative border flex items-center justify-between text-sm font-normal rounded-full px-1 py-1 w-[105px] h-[45px] border-[rgba(255,255,255,0.3)] transition-colors ${isSuperSaverOn ? 'bg-[rgba(19,171,120,1)] text-white' : 'bg-[rgba(232,232,232,1)]'}`}
             >
               <div 
                 className={`absolute flex h-[35px] w-[35px] rounded-full transition-all duration-300 ${isSuperSaverOn ? 'transform translate-x-[60px] bg-[rgba(252,219,87,1)]' : 'bg-white'}`}
               ></div>
-              <div className={`w-[45px] text-center transition-all duration-300 ${isSuperSaverOn ? 'transform translate-x-2' : 'transform translate-x-8'}`}>
+              <div className={`w-[45px] text-center transition-all duration-300 ${isSuperSaverOn ? 'font-medium transform translate-x-2' : 'transform translate-x-8'}`}>
                 Steal Deal
               </div>
             </button>
@@ -178,7 +178,7 @@ const Header: React.FC = () => {
             {/* Location Selector */}
             <button
               onClick={handleLocationClick}
-              className="bg-[rgba(252,219,87,1)] flex items-center gap-2 text-black font-medium justify-center w-[110px] h-[40px] rounded-md focus:outline-none"
+              className="bg-[rgba(252,219,87,1)] flex items-center gap-2 text-black font-medium justify-center w-[90px] h-[35px] rounded-md focus:outline-none"
             >
               <span className="text-sm">Location</span>
               <img
@@ -193,14 +193,14 @@ const Header: React.FC = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={() => handleNavigation("/maintenance")}
-              className="flex flex-col items-center justify-center w-[36px] border-none bg-transparent"
+              className="flex flex-col items-center justify-center w-[25px] h-[40px] border-none bg-transparent"
             >
               <ShoppingCart size={24} />
               <div className="text-[12px] mt-1">Cart</div>
             </button>
             <button
               onClick={() => handleNavigation("/maintenance")}
-              className="flex flex-col items-center justify-center w-[36px] border-none bg-transparent"
+              className="flex flex-col items-center justify-center w-[25px] h-[40px] border-none bg-transparent"
             >
               <LogIn size={24} />
               <div className="text-[12px] mt-1">Login</div>
