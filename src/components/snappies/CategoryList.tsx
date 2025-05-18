@@ -86,7 +86,7 @@ const CategoryList: React.FC = () => {
               key={category.id}
               href="#"
               onClick={(e) => handleCategoryClick(e, category.id)}
-              className="bg-white border flex-shrink-0 overflow-hidden text-[15px] text-black font-medium text-center leading-[1.3] w-full rounded-[5px] border-[rgba(247,247,247,1)] border-solid hover:shadow-md transition-shadow"
+              className="bg-white border flex-shrink-0 overflow-hidden text-[15px] text-black font-medium text-center leading-[1.3] w-full rounded-[5px] border-[rgba(247,247,247,0.5)] border-solid hover:shadow-md transition-shadow"
             >
               <img
                 src={category.image}

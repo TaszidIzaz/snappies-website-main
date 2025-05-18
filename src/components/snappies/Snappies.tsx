@@ -20,10 +20,75 @@ const Snappies: React.FC = () => {
           <CategoryList />
         </div>
 
-        {/* First Two Product Rows Combined */}
+        {/* First Product Section with Horizontal Scroll */}
+        
         <div className="mt-[60px]">
-          <ProductGrid />
+        <div className="w-full text-black">
+        <h2 className="text-[22px] md:text-[28px] font-semibold leading-none tracking-[-0.56px] w-full mb-[60px]">
+          Top Products
+        </h2>
+      </div>
           
+          <div className="relative" id="main-products">
+            {/* Left Arrow */}
+            <button 
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md -ml-2 focus:outline-none hidden md:block" 
+              onClick={() => {
+                const container = document.querySelector('#main-products > div');
+                if (container) {
+                  container.scrollBy({ left: -300, behavior: 'smooth' });
+                }
+              }}
+              aria-label="Scroll left"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+
+            {/* Mobile scroll indicator */}
+            <div className="absolute right-4 top-[-30px] flex items-center gap-2 md:hidden">
+              <span className="text-sm text-gray-600">Swipe</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+
+            <div className="overflow-x-auto hide-scrollbar">
+              <ProductGrid
+                horizontal={true}
+                scrollable={true}
+                backgroundColor="bg-[rgba(247,247,247,1)]"
+                buttonColor="bg-[rgba(58,183,131,1)]"
+              />
+            </div>
+
+            {/* Right Arrow */}
+            <button 
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md -mr-2 focus:outline-none hidden md:block" 
+              onClick={() => {
+                const container = document.querySelector('#main-products > div');
+                if (container) {
+                  container.scrollBy({ left: 300, behavior: 'smooth' });
+                }
+              }}
+              aria-label="Scroll right"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+
+          {/* See All Products Button */}
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={() => window.location.href = '/maintenance'}
+              className="bg-[rgba(58,183,131,1)] hover:bg-[rgba(48,163,111,1)] text-white px-8 py-3 rounded-lg transition-colors"
+            >
+              See All Products
+            </button>
+          </div>
         </div>
 
         {/* Grocery Banner */}
@@ -40,8 +105,9 @@ const Snappies: React.FC = () => {
           buttonText="See All Deals"
           buttonColor="bg-white"
           buttonTextColor="text-black"
-          imageUrl="https://cdn.builder.io/api/v1/image/assets/00f3918735164546ac5c37075df506a7/0c5d4920d464567651cedcbdcc4b671303ac078c"
+          imageUrl="public/uploads/gro.png"
           className="mt-[60px]"
+          imageClassName="scale-[5.5] transform-gpu" // Updated scaling class
         />
 
         {/* How It Works Section */}

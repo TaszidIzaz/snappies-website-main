@@ -1,11 +1,13 @@
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 interface HowItWorksProps {
   className?: string;
 }
 
 const HowItWorks: React.FC<HowItWorksProps> = ({ className = "" }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const steps = [
     {
       id: 1,
@@ -53,6 +55,14 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ className = "" }) => {
     },
   ];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % steps.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className={`self-center min-h-96 w-full max-w-[1520px] ${className}`}>
       <div className="w-full text-black">
@@ -61,41 +71,60 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ className = "" }) => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full gap-5 mt-7">
-        {steps.map((step) => (
-          <div
-            key={step.id}
-            className="w-full h-full"
-          >
+      <div className="relative overflow-hidden mt-7">
+        <div 
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {steps.map((step) => (
             <div
-              className={`${step.backgroundColor} flex w-full h-full flex-col overflow-hidden pl-5 pr-5 pt-7 pb-12 rounded-[10px]`}
+              key={step.id}
+              className="w-full flex-shrink-0"
+              style={{ minWidth: '100%' }}
             >
               <div
-                className={`flex gap-5 md:gap-10 text-5xl md:text-[100px] ${step.numberColor} font-semibold whitespace-nowrap tracking-[1px] leading-[1.3]`}
+                className={`${step.backgroundColor} flex w-full h-full flex-col overflow-hidden pl-5 pr-5 pt-7 pb-12 rounded-[10px]`}
               >
-                <img
-                  src={step.icon}
-                  alt={`Step ${step.id}`}
-                  className="aspect-[1] object-contain w-14 md:w-20 shrink-0"
-                />
-                <div>{step.id}</div>
-              </div>
+                <div
+                  className={`flex gap-5 md:gap-10 text-5xl md:text-[100px] ${step.numberColor} font-semibold whitespace-nowrap tracking-[1px] leading-[1.3]`}
+                >
+                  <img
+                    src={step.icon}
+                    alt={`Step ${step.id}`}
+                    className="aspect-[1] object-contain w-14 md:w-20 shrink-0"
+                  />
+                  <div>{step.id}</div>
+                </div>
 
-              <div className="mt-5 md:mt-[22px]">
-                <h3
-                  className={`${step.textColor} text-lg md:text-xl font-semibold leading-[1.3] tracking-[0.2px]`}
-                >
-                  {step.title}
-                </h3>
-                <p
-                  className={`${step.descriptionColor} text-sm md:text-base font-normal leading-6 mt-3 md:mt-4`}
-                >
-                  {step.description}
-                </p>
+                <div className="mt-5 md:mt-[22px]">
+                  <h3
+                    className={`${step.textColor} text-lg md:text-xl font-semibold leading-[1.3] tracking-[0.2px]`}
+                  >
+                    {step.title}
+                  </h3>
+                  <p
+                    className={`${step.descriptionColor} text-sm md:text-base font-normal leading-6 mt-3 md:mt-4`}
+                  >
+                    {step.description}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* Slide Indicators */}
+        <div className="flex justify-center gap-2 mt-4">
+          {steps.map((_, index) => (
+            <button
+              key={index}
+              className={`w-2 h-2 rounded-full transition-all ${
+                currentSlide === index ? 'bg-[rgba(19,171,120,1)] w-4' : 'bg-gray-300'
+              }`}
+              onClick={() => setCurrentSlide(index)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

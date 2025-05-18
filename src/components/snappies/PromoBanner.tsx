@@ -9,6 +9,7 @@ interface PromoBannerProps {
   buttonColor?: string;
   buttonTextColor?: string;
   imageUrl?: string;
+  imageClassName?: string;  // Add this line
   tag?: string;
   className?: string;
   children?: ReactNode;
@@ -23,6 +24,7 @@ const PromoBanner: React.FC<PromoBannerProps> = ({
   buttonColor = "",
   buttonTextColor = "",
   imageUrl,
+  imageClassName,  // Add this line
   tag,
   className = "",
   children,
